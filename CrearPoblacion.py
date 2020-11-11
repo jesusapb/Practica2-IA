@@ -39,11 +39,3 @@ class CrearPoblacion:
             i = i + 1
 
         return self.poblacion
-
-
-
-#poblacion= CrearPoblacion(8,10)
-#print(individuo.crearLista())
-#print(poblacion.CrearNuevaPoblacion())
-#print(poblacion.creacromosoma())
-#print(poblacion.crearIndividuo2() )

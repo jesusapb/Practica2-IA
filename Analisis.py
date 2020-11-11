@@ -19,54 +19,10 @@ class Analisis:
             return False
         #pass
 
-
-    def tieneDiagonalDer(self):
-        j=0
-        print("se verifica si tiene diangonal derecha")
-        for i in self.valores:
-            #print("El valor del bit es:")
-            #print(i)
-            #print("El numero de bit es:")
-            j+=1
-            print("numero iteracion interna:",j)
-            listaTemporal=self.valores[:j]
-            print(listaTemporal)
-            print(listaTemporal[0])
-            print(listaTemporal[j-1])
-
-
-            inicio=listaTemporal[0]  + j - 1
-            final = listaTemporal[j-1]
-            if len(listaTemporal)!= 1:
-                if inicio == final:
-                    print("si")
-                else:
-                    print("no")
-
-
-    def tieneDiagonalDer2(self):
-        j=0
-        print("se verifica si tiene diangonal derecha")
-        for i in self.valores:
-            #print("El valor del bit es:")
-            #print(i)
-            #print("El numero de bit es:")
-            j+=1
-            print("numero iteracion interna:",j)
-            listaTemporal=self.valores[j-1:]
-            #print(listaTemporal)
-            l=0
-            for k in listaTemporal:
-                print("hola")
-                l = l + 1
-                nuevaLista=listaTemporal[:l]
-                print(nuevaLista)
-
-
 ##es la diagonal izquierda
 ##esta es la respuesta
 
-    def tieneDiagonalIzq3(self):
+    def tieneDiagonalIzq(self):
         j=0
         self.contador=0
         print("se verifica si tiene diangonal Izquierda")
@@ -98,14 +54,7 @@ class Analisis:
                         print("no")
 
 
-
-
-
-
-
-
-
-    def tieneDiagonalDer2(self):
+    def tieneDiagonalDer(self):
         j=0
         print("se verifica si tiene diangonal derecha")
         for i in self.valores:
@@ -137,7 +86,7 @@ class Analisis:
 
 
 
-    def tieneDiagonalDer3(self):
+    def tieneDiagonalDer2(self):
         j=0
         self.contador_der=0
         print("se verifica si tiene diangonal derecha")
@@ -170,10 +119,6 @@ class Analisis:
                 l= l+1
         #return contador
 
-
-
-
-
     def SolucionIdeal(self):
         pass
 
@@ -196,10 +141,10 @@ Prueba= Analisis(B)
 print(Prueba.SeRepiten())
 #Prueba2.tieneDiagonalIzq3()
 #Prueba2.tieneDiagonalIzq()
-Prueba.tieneDiagonalDer3()
+Prueba.tieneDiagonalDer2()
 print(Prueba.contador_der)
 
 
 Prueba2 = Analisis(A)
-Prueba2.tieneDiagonalDer3()
+Prueba2.tieneDiagonalDer2()
 print(Prueba2.contador_der)

@@ -32,6 +32,27 @@ for i in poblacion_inicial.poblacion:
         print()
         respuestas.append(i)
 
+nuevaPoblacion= copy.copy(poblacion_inicial)
+
+#while j< 10:
+#    #se define el proceso de mutacion con un porcentaje pequeño de cambio
+#    poblacionTemporal=[]
+#    for i in nuevaPoblacion:
+#        print("comienza el proceso de mutacion:")
+#        muta = Mutacion2(40,i)
+        #muta.mutar_individuo()
+#        .append(muta.mutar_individuo())
+#    j = j+ 1
+
+#print(nuevaPoblacion) '
+
+
+
+
+
+
+
+
 print("Estos son respuestas:")
 print(respuestas)
 print(len(respuestas))
@@ -70,9 +91,3 @@ if len(respuestas)>1:
 #print(probas.promedio)
 #probas.Cal_moda()
 #print(probas.modas)
-
-
-
-
-
-

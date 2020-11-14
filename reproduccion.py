@@ -21,11 +21,13 @@ class reproduccion:
     def formarNuevaPoblacion(self):
         #se mezcla a la poblacion
         self.mezclarPoblacion()
-        #se les cruza(intercambian colas o bits) y muta
+        #se les cruza(intercambian colas o bits
+
+        # muta
 
         #se regresa a la poblacion para ser analizada
 
-        #pass
+
 
 
     def imprimir_poblacion(self):

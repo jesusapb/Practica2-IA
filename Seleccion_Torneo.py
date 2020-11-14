@@ -12,13 +12,27 @@ class seleccion_torneo:
 
     def torneo(self):
         for i in range(0,self.tama):
-            print(self.valoresFitnes[i])
-            print(self.poblacion[i])
+            print("Fitnes: ",self.valoresFitnes[i])
+            print("El individuo de la poblacion: ",self.poblacion[i])
             num_Ale1= random.randint(0,self.tama)
             num_Ale2 = random.randint(0, self.tama)
             print("numero aleatorio 1:", num_Ale1)
             print("numero aleatorio 2:", num_Ale2)
-            if self.valoresFitnes[i] > self.valoresFitnes[num_Ale1]:
+            if self.valoresFitnes[i] < self.valoresFitnes[num_Ale1]:
+                self.NuevaPoblacion.append(self.poblacion[i])
+            else:
+                self.NuevaPoblacion.append(self.poblacion[num_Ale1])
+
+
+    def torneo2(self):
+        for i in range(0,self.tama):
+            print("Fitnes: ",self.valoresFitnes[i])
+            print("El individuo de la poblacion: ",self.poblacion[i])
+            num_Ale1= random.randint(0,self.tama)
+            num_Ale2 = random.randint(0, self.tama)
+            print("numero aleatorio 1:", num_Ale1)
+            print("numero aleatorio 2:", num_Ale2)
+            if self.valoresFitnes[i] < self.valoresFitnes[num_Ale1]:
                 self.NuevaPoblacion.append(self.poblacion[i])
             else:
                 self.NuevaPoblacion.append(self.poblacion[num_Ale1])

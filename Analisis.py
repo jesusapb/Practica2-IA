@@ -13,11 +13,11 @@ class Analisis:
 
     def SeRepiten(self):
         if len(self.valores) == len(set(self.valores)):
-            print("no se repite ningun elemento")
+            #print("no se repite ningun elemento")
             #self.contador_rep = len(set(self.valores))
             return True
         else:
-            print("se repite uno o mas elementos")
+            #print("se repite uno o mas elementos")
             self.contador_rep = len(set(self.valores))
             return False
         #pass
@@ -55,26 +55,17 @@ class Analisis:
     def tieneDiagonalIzq3(self):
         j=0
         self.contador=0
-        #print("se verifica si tiene diangonal Izquierda")
         for i in self.valores:
             j+=1
-            #print("numero iteracion interna:",j)
             listaTemporal=self.valores[j-1:]
             l=0
             for k in listaTemporal:
                 l = l + 1
                 nuevaLista=listaTemporal[:l]
-                #print(nuevaLista)
-                ## aqui empieza la prueba
                 inicio = nuevaLista[0] + l - 1
-                #print(inicio)
                 final = nuevaLista[l - 1]
-                #print(final)
                 if len(nuevaLista) != 1:
                     if inicio == final:
-                        #print("si")
-                        #aqui retornara que no cumple con evitar choques en diagonal
-                        #return True
                         self.contador_izq= self.contador_izq + 1
                     #else:
                         #print("no")
@@ -142,26 +133,16 @@ class Analisis:
     def tieneDiagonalDer3(self):
         j=0
         self.contador_der=0
-        #print("se verifica si tiene diagonal derecha")
         for i in self.valores:
             j+=1
-            #print("numero iteracion interna:",j)
             listaTemporal=self.valores[j-1:]
             l=0
             for k in listaTemporal:
                 nuevaLista=listaTemporal[:l + 1]
-                #print(nuevaLista)
-                ## aqui empieza la prueba
                 inicio = nuevaLista[0]
-                #print("contador:", l)
-                #print(inicio)
                 final = nuevaLista[l] + l
-                print(final)
                 if len(nuevaLista) != 1:
                     if inicio == final:
-                        #print("si")
-                        #aqui retornara que no cumple con evitar choques en diagonal
-                        #return True
                         self.contador_der = self.contador_der + 1
                     #else:
                      #   print("no")
@@ -170,9 +151,9 @@ class Analisis:
 
 
     def SolucionIdeal(self):
-        if self.SeRepiten()==False:
-            print("se repiten valores")
-            print(self.contador_rep)
+        #if self.SeRepiten()==False:
+        #    print("se repiten valores")
+            #print(self.contador_rep)
         #self.tieneDiagonalIzq()
         #self.tieneDiagonalDer2()
         self.tieneDiagonalIzq3()
@@ -180,7 +161,6 @@ class Analisis:
         #print("Pesos:")
         #print(self.contador_izq)
         #print(self.contador_der)
-        #pass
 
     
 

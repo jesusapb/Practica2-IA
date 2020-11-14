@@ -64,6 +64,7 @@ class intercambiar:
                 print("el numero aleatorio es:", ApartirD)
                 self.hijoA.append(B)
                 self.hijoB.append(A)
+
             else:
                 print("no se edita")
                 self.hijoA.append(A)
@@ -113,12 +114,12 @@ class intercambiar:
 
 
 
-A=[1,1,0,1]
-B=[1,0,0,1]
+#A=[1,1,0,1]
+#B=[1,0,0,1]
 
 
-C= [1,1,0,1,1,0]
-D= [1,0,1,1,0,1]
+#C= [1,1,0,1,1,0]
+#D= [1,0,1,1,0,1]
 
 #cadena=intercambiar(C,D,60)
 

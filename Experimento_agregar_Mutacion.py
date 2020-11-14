@@ -8,7 +8,7 @@ from Analisis import *
 #from GraficarRespuestas import *
 
 
-poblacion_inicial= CrearPoblacion(8,2)
+poblacion_inicial= CrearPoblacion(8,100)
 poblacion_inicial.CrearNuevaPoblacion()
 print(poblacion_inicial.poblacion)
 
@@ -22,7 +22,7 @@ nuevaPoblacion=copy.copy(poblacion_inicial.poblacion)
 
 j=0
 
-while j<4:
+while j<100:
     poblacionMutada=[]
     for i in nuevaPoblacion:
         buscar = Analisis(i)
@@ -30,8 +30,8 @@ while j<4:
         if buscar.contador_der == 0 and buscar.contador_izq == 0:
             #print("Es respuesta")
             respuestas.append(i)
-    print("mutacion")
-
+    #print("mutacion")
+    print(j)
     for i in nuevaPoblacion:
         print("comienza el proceso de mutacion:")
         muta = Mutacion2(40,i)
@@ -40,7 +40,8 @@ while j<4:
 
     nuevaPoblacion.clear()
     nuevaPoblacion=poblacionMutada
-    # print(nuevaPoblacion)
+    print(nuevaPoblacion)
+
     j = j+1
 
 

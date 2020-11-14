@@ -39,3 +39,14 @@ class CrearPoblacion:
             i = i + 1
 
         return self.poblacion
+
+
+
+
+
+poblacion= CrearPoblacion(8,6)
+print(poblacion.CrearNuevaPoblacion())
+
+
+
+

@@ -12,6 +12,7 @@ C = [1,2,4,5,6,3,3]
 #print(list(set(C)))
 
 result = []
+
 for item in C:
     if item not in result:
         result.append(item)
@@ -20,3 +21,6 @@ print(result)
 
 
 print(random.sample(list(range(1,9)),8))
+
+print( random.randint(0,len(C)-1))
+print(len(C))

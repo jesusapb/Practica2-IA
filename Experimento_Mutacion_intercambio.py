@@ -1,11 +1,13 @@
 from Mutacion2 import *
 from GenerarPoblacion import *
 from intercambiar import *
-from seleccionar import *
-from probabilidad import *
+#from seleccionar import *
+#from probabilidad import *
 from CrearPoblacion import *
 from Analisis import *
 #from GraficarRespuestas import *
+from Seleccion_Torneo import *
+
 
 
 poblacion_inicial= CrearPoblacion(8,100)
@@ -23,7 +25,7 @@ nuevaPoblacion=copy.deepcopy(poblacion_inicial.poblacion)
 j=0
 
 while j<10:
-
+    Fitnest = []
     for i in nuevaPoblacion:
         buscar = Analisis(i)
         buscar.SolucionIdeal()
@@ -31,12 +33,24 @@ while j<10:
         if buscar.contador_total ==0:
             #print("Es respuesta")
             respuestas.append(i)
+        Fitnest.append(buscar.contador_total)
+
+
+    # Torneo
+    poblacionToneo=[]
+    torneo = seleccion_torneo(nuevaPoblacion,Fitnest)
+    torneo.torneo4()
+    poblacionToneo = torneo.NuevaPoblacion
+
+    Fitnest.clear()
+
+    #intercambio
 
     #print("mutacion")
     poblacionMutada = []
     print(j)
     print("comienza el proceso de mutacion:")
-    for i in nuevaPoblacion:
+    for i in poblacionToneo:
         #print("comienza el proceso de mutacion:")
         muta = Mutacion2(40,i)
         #mutar.mutar_individuo()

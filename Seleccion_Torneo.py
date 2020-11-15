@@ -39,14 +39,39 @@ class seleccion_torneo:
 
 
 
+    def torneo3(self):
+        i=0
+        while i< self.tama:
+            if self.valoresFitnes[(i % self.tama)] < self.valoresFitnes[((i + 1)% self.tama)]:
+                self.NuevaPoblacion.append(self.poblacion[(i % self.tama)])
+            else:
+                self.NuevaPoblacion.append(self.poblacion[(i + 1)% self.tama])
+            i = i +1
 
-F=[1,3,4,5,6,2,1,8,6]
+    def torneo4(self):
+        i=0
+        while i< self.tama:
+            if self.valoresFitnes[(i % self.tama)] < self.valoresFitnes[((i + 1)% self.tama)] and self.valoresFitnes[(i % self.tama)] < self.valoresFitnes[((i + 2)% self.tama)]:
+                self.NuevaPoblacion.append(self.poblacion[(i % self.tama)])
+            else:
+                if self.valoresFitnes[((i + 1) % self.tama)] < self.valoresFitnes[(i % self.tama)] and self.valoresFitnes[((i+ 1) % self.tama)] < self.valoresFitnes[((i + 2) % self.tama)]:
+                    self.NuevaPoblacion.append(self.poblacion[(i + 1) % self.tama])
+
+                else:
+                    self.NuevaPoblacion.append(self.poblacion[(i + 2) % self.tama])
+
+            i = i + 1
+
+
+
+
+F=[1,3,4,5,6,2]
 
 pobla= [[8,3,5,4,2,7,6,1], [5,2,8,3,7,1,4,6], [6,8,2,3,4,7,5,1], [2,4,8,7,6,3,5,1], [7,5,3,6,1,8,2,4], [2,6,8,7,1,5,4,3]]
 
 
 seleccion = seleccion_torneo(pobla,F)
-seleccion.torneo()
+seleccion.torneo3()
 print(seleccion.NuevaPoblacion)
 
 

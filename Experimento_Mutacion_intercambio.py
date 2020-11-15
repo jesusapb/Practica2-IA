@@ -23,7 +23,7 @@ nuevaPoblacion=copy.deepcopy(poblacion_inicial.poblacion)
 j=0
 
 while j<10:
-    poblacionMutada=[]
+
     for i in nuevaPoblacion:
         buscar = Analisis(i)
         buscar.SolucionIdeal()
@@ -31,7 +31,9 @@ while j<10:
         if buscar.contador_total ==0:
             #print("Es respuesta")
             respuestas.append(i)
+
     #print("mutacion")
+    poblacionMutada = []
     print(j)
     print("comienza el proceso de mutacion:")
     for i in nuevaPoblacion:
@@ -48,4 +50,4 @@ while j<10:
 
 
 print("respuestas:", respuestas)
-print("poblacion inicial:", nuevaPoblacion)
+print("poblacion inicial:",nuevaPoblacion)

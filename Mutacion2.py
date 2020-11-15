@@ -36,11 +36,11 @@ class Mutacion2:
         self.ind_nuevo=[]
         mutar=self.muta_o_no()
         if mutar == True:
-            print("Si muta")
+            #print("Si muta")
             self.ind_nuevo= self.mutar()
             return self.ind_nuevo
         else:
-            print("No muta")
+            #print("No muta")
             return self.ind_ori
 
 

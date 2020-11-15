@@ -10,7 +10,7 @@ print(poblacion_inicial.poblacion)
 nuevaPoblacion=[]
 
 tama = len(poblacion_inicial.poblacion)
-
+#poblacionIntercambio=
 i =0
 while i< tama:
     print(i)

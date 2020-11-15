@@ -14,23 +14,25 @@ from GraficarRespuestas import *
 
 ##se crea la poblacion
 ## idealmente esta poblacion sera de 100 o 1000 miembros y cada uno tendra N*N bits
-poblacion_inicial= CrearPoblacion(8,1000)
+poblacion_inicial= CrearPoblacion(8,10)
 poblacion_inicial.CrearNuevaPoblacion()
 print(poblacion_inicial.poblacion)
 
 nuevaPoblacion=[]
 respuestas=[]
-
+Fitnest=[]
 
 #se evalua la poblacion inicial para ver si en ella no se encuentra alguna respuesta
 
 for i in poblacion_inicial.poblacion:
     buscar = Analisis(i)
     buscar.SolucionIdeal()
-    if buscar.contador_der == 0 and buscar.contador_izq == 0:
-        print("Es respuesta")
-        print()
+    #if buscar.contador_der == 0 and buscar.contador_izq == 0:
+    if buscar.contador_total==0:
+        #print("Es respuesta")
         respuestas.append(i)
+
+    Fitnest.append(buscar.contador_total)
 
 print("Estos son respuestas:")
 print(respuestas)
@@ -40,6 +42,8 @@ if len(respuestas)>1:
     imprimir.imprimir()
 
 
+print("El fitnes del corrimiento es")
+print(Fitnest)
 
 
 #se define el proceso de mutacion con un porcentaje pequeño de cambio

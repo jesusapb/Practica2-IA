@@ -8,6 +8,7 @@ class Analisis:
         self.contador_izq=0
         self.contador_der=0
         self.contador_rep=0
+        self.contador_total=0
         #pass
 
 
@@ -158,6 +159,7 @@ class Analisis:
         #self.tieneDiagonalDer2()
         self.tieneDiagonalIzq3()
         self.tieneDiagonalDer3()
+        self.contador_total = self.contador_izq + self.contador_der
         #print("Pesos:")
         #print(self.contador_izq)
         #print(self.contador_der)

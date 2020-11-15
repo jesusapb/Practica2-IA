@@ -23,7 +23,7 @@ class seleccion_torneo:
             else:
                 self.NuevaPoblacion.append(self.poblacion[num_Ale1])
 
-
+#metodo posiblemente dañado, revisarlo a la brevedad
     def torneo2(self):
         for i in range(0,self.tama):
             print("Fitnes: ",self.valoresFitnes[i])
@@ -63,17 +63,20 @@ class seleccion_torneo:
             i = i + 1
 
 
+    def mezclar_poblacion(self):
+        mezcla = random.sample(self.NuevaPoblacion, self.tama)
+        self.NuevaPoblacion = mezcla
+
+#F=[1,3,4,5,6,2]
+
+#pobla= [[8,3,5,4,2,7,6,1], [5,2,8,3,7,1,4,6], [6,8,2,3,4,7,5,1], [2,4,8,7,6,3,5,1], [7,5,3,6,1,8,2,4], [2,6,8,7,1,5,4,3]]
 
 
-F=[1,3,4,5,6,2]
-
-pobla= [[8,3,5,4,2,7,6,1], [5,2,8,3,7,1,4,6], [6,8,2,3,4,7,5,1], [2,4,8,7,6,3,5,1], [7,5,3,6,1,8,2,4], [2,6,8,7,1,5,4,3]]
-
-
-seleccion = seleccion_torneo(pobla,F)
-seleccion.torneo3()
-print(seleccion.NuevaPoblacion)
-
+#seleccion = seleccion_torneo(pobla,F)
+#seleccion.torneo3()
+#print(seleccion.NuevaPoblacion)
+#seleccion.mezclar_poblacion()
+#print(seleccion.NuevaPoblacion)
 
 
 

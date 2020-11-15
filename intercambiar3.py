@@ -1,6 +1,7 @@
 import random
-# En esta clase se intercabian las colas apartir de un punto aleatorio, primero se considera si se intercambian
-# o no, siguiendo la probabilidad de intercambio
+''' En esta clase se intercabian las colas apartir de un punto aleatorio, se usa la cola
+del otro padre para completar al hijo y el resto con numeros aletorios evitando repeticion'''
+
 
 ##se cambiara el nombre a cruzar
 
@@ -41,18 +42,18 @@ class intercambiar3:
         for A, B in zip(self.ind_A, self.ind_B):
             print(A)
             print(B)
-            print("el nivel de bits recorridos es:", i)
+            #print("el nivel de bits recorridos es:", i)
             # print(i)
             i = i + 1
             if i > ApartirD :
-                print("se edita")
-                print("el numero aleatorio es:", ApartirD)
+                #print("se edita")
+                #print("el numero aleatorio es:", ApartirD)
                 #se debe verificar que no se repita
                 self.hijoA.append(B)
                 self.hijoB.append(A)
 
             else:
-                print("no se edita")
+                #print("no se edita")
                 self.hijoA.append(A)
                 self.hijoB.append(B)
 
@@ -88,21 +89,6 @@ class intercambiar3:
             self.hijoB.append(i)
 
 
-
-
-
-
-
-
-        #self.hijo
-        # A = list(set(self.hijoA))
-        #self.hijoB = list(set(self.hijoB))
-
-
-
-
-
-
     def procesoCruzamiento(self):
         self.hijoA=[]
         self.hijoB=[]
@@ -116,10 +102,10 @@ class intercambiar3:
             self.hijoB = self.ind_B
 
     def resultado_reproduccion(self):
-        print("Padres")
+        #print("Padres")
         print(self.ind_A)
         print(self.ind_B)
-        print("hijos")
+        #print("hijos")
         print(self.hijoA)
         print(self.hijoB)
         if self.mutoAPartirD > 0:

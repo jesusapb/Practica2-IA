@@ -1,16 +1,16 @@
 from Mutacion2 import *
-from GenerarPoblacion import *
-from intercambiar import *
-#from seleccionar import *
+#from GenerarPoblacion import *
+#from intercambiar import *
+##from seleccionar import *
 #from probabilidad import *
 from CrearPoblacion import *
 from Analisis import *
 #from GraficarRespuestas import *
 from Seleccion_Torneo import *
+from Hacer_Cruzamiento import *
 
 
-
-poblacion_inicial= CrearPoblacion(8,100)
+poblacion_inicial= CrearPoblacion(8,50)
 poblacion_inicial.CrearNuevaPoblacion()
 print(poblacion_inicial.poblacion)
 
@@ -24,7 +24,7 @@ nuevaPoblacion=copy.deepcopy(poblacion_inicial.poblacion)
 
 j=0
 
-while j<10:
+while j<100:
     Fitnest = []
     for i in nuevaPoblacion:
         buscar = Analisis(i)
@@ -39,18 +39,24 @@ while j<10:
     # Torneo
     poblacionToneo=[]
     torneo = seleccion_torneo(nuevaPoblacion,Fitnest)
-    torneo.torneo4()
+    torneo.torneo3()
+    torneo.mezclar_poblacion()
     poblacionToneo = torneo.NuevaPoblacion
-
     Fitnest.clear()
 
     #intercambio
+    poblacionIntercambio=[]
+    cruzamiento= Hacer_cruzamiento(poblacionToneo,80)
+    cruzamiento.cruzarPoblacion()
+    poblacionIntercambio = cruzamiento.nuevaPoblacion
 
-    #print("mutacion")
+
+
+    #mutacion
     poblacionMutada = []
     print(j)
     print("comienza el proceso de mutacion:")
-    for i in poblacionToneo:
+    for i in poblacionIntercambio:
         #print("comienza el proceso de mutacion:")
         muta = Mutacion2(40,i)
         #mutar.mutar_individuo()

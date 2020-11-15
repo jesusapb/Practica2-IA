@@ -46,7 +46,6 @@ class Mutacion2:
 
 
 
-
 #A=[1,2,3,4,5,6,7,8]
 #muta= Mutacion2(80,A)
 #muta.mutar_individuo()

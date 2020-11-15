@@ -3,6 +3,7 @@ from Mutacion2 import *
 class Hacer_Mutacion:
 
     def __init__(self,poblacion,probabilidad):
+        print("Hacer mutacion")
         self.poblacion = poblacion
         self.probabilidad = probabilidad
         self.nuevaPoblacion = []

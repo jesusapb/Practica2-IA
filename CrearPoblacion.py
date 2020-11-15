@@ -45,7 +45,8 @@ class CrearPoblacion:
 
 
 #poblacion= CrearPoblacion(8,8)
-#print(poblacion.CrearNuevaPoblacion())
+#poblacion.CrearNuevaPoblacion()
+#print(poblacion.poblacion)
 
 
 

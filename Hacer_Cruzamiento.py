@@ -9,6 +9,7 @@ class Hacer_cruzamiento:
         self.nuevaPoblacion = []
         self.tama = len(self.poblacion)
         self.probabilidad = probabilidad
+        print("hacer cruzamiento")
 
 
 

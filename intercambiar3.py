@@ -40,8 +40,8 @@ class intercambiar3:
         self.mutoAPartirD = ApartirD
         i = 0
         for A, B in zip(self.ind_A, self.ind_B):
-            print(A)
-            print(B)
+            #print(A)
+            #print(B)
             #print("el nivel de bits recorridos es:", i)
             # print(i)
             i = i + 1

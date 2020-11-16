@@ -115,24 +115,3 @@ class Cruzamiento:
             print("no hubo intercambio")
 
         print(self.probabilidad)
-
-
-
-#A=[1,1,0,1]
-#B=[1,0,0,1]
-
-
-#C= [8,7,6,5,4,3,2,1]
-#D= [1,2,3,4,5,6,7,8]
-
-#B1 = [4,8,1,6,5,3,7,2]
-#B2 = [3,6,5,8,4,2,7,1]
-
-#cadena=intercambiar3(B1,B2,90)
-
-#print(cadena.numero_aleatorio())
-#cadena.Construir_Hijos()
-#cadena.procesoCruzamiento()
-#cadena.resultado_reproduccion()
-
-#cadena.procesoCruzamiento()

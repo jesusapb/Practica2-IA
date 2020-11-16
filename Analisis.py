@@ -9,7 +9,6 @@ class Analisis:
         self.contador_der=0
         self.contador_rep=0
         self.contador_total=0
-        #pass
 
 
     def SeRepiten(self):
@@ -168,50 +167,8 @@ class Analisis:
 
 
     def SolucionIdeal(self):
-        #if self.SeRepiten()==False:
-        #    print("se repiten valores")
-            #print(self.contador_rep)
-        #self.tieneDiagonalIzq()
-        #self.tieneDiagonalDer2()
         self.SeRepiten2()
         self.tieneDiagonalIzq3()
         self.tieneDiagonalDer3()
         self.contador_total = self.contador_izq + self.contador_der + self.contador_rep
-        #print("Pesos:
-        #print(self.contador_izq)
-        #rint(self.contador_der)
-        #print(self.contador_total)
 
-    
-
-
-
-
-#A=[5,2,4,7,3,8,6,1]
-#A1=[5,6,7,8,2,1,3,4]
-#A2=[5,6,4,7,3,8,2,1]
-#B=[4,7,3,8,2,5,1,6]
-#C1=[1,2,3,4,5,6,7,8]
-#C2=[8,7,6,5,4,3,2,1]
-#C3=[1,2,3,4,8,7,6,5]
-#C4=[1,8,2,7,3,6,4,5]
-#C5=[1,1,1,1,2,2,2,2]
-#Prueba = NuevaPrueba(A)
-#print(Prueba.SeRepiten())
-
-#D=[1,1,1,1,1,1,1,1]
-#D1=[1,1,1,1,2,2,3,3]
-#A= [1,2,3,5,3,4,4,5]
-
-#Prueba= Analisis(B)
-#print(Prueba.SeRepiten())
-#Prueba2.tieneDiagonalIzq3()
-#Prueba2.tieneDiagonalIzq()
-#Prueba.tieneDiagonalDer2()
-#print(Prueba.contador_der)
-
-
-#Prueba = Analisis(D1)
-#Prueba2.tieneDiagonalDer2()
-#print(Prueba2.contador_der)
-#Prueba.SolucionIdeal()

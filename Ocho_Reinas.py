@@ -17,7 +17,6 @@ class Ocho_Reinas:
         self.PoblacionInicial = []
         self.PoblacionNueva = []
         self.Respuestas = []
-        #self.PoblacionTorneo = []
 
     def Generar_Poblacion(self):
         poblacion = CrearPoblacion(self.NR,self.Tama)
@@ -47,7 +46,6 @@ class Ocho_Reinas:
             Fitnest.clear()
 
             #cruzamiento
-
             cruzamiento = Hacer_cruzamiento(poblacionTorneo,self.Prob_Cruzamiento)
             cruzamiento.cruzarPoblacion()
             poblacionIntercambio = cruzamiento.nuevaPoblacion
@@ -62,8 +60,6 @@ class Ocho_Reinas:
             j = j + 1
             print(self.PoblacionNueva)
 
-        #print(self.Respuestas)
-
 
 
     def imprimir_Solucion(self):
@@ -73,9 +69,7 @@ class Ocho_Reinas:
 
     def Graficar_Soluciones(self):
         if len(self.Respuestas) >1:
-            imprimir=GraficarRespuestas(self.Respuestas[1])
-            #imprimir.construirLinea(8)
-            #imprimir.construir_impresion()
+            imprimir=GraficarRespuestas(self.Respuestas[0])
             imprimir.imprimir()
 
 

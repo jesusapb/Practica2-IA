@@ -1,4 +1,9 @@
 import math
+''''
+clase fallida borrarla
+
+'''
+
 
 class seleccionar:
 

@@ -1,4 +1,8 @@
 import  random
+'''  
+En esta clase se crea a la poblacion, en base a la logitud y al tamaño que se pasan en el constructor
+se regresa a traves del atributo poblacion
+'''
 
 class CrearPoblacion:
 
@@ -7,7 +11,7 @@ class CrearPoblacion:
         self.longitud= longitud
         #tamaño de la poblacion
         self.tama=tama
-        #poblacion
+        #la poblacio, se crea la lista vacia para facilitar el manejo
         self.poblacion = []
 
 

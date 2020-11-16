@@ -5,7 +5,7 @@ del otro padre para completar al hijo y el resto con numeros aletorios evitando 
 
 ##se cambiara el nombre a cruzar
 
-class intercambiar3:
+class Cruzamiento:
 
     def __init__(self,ind_A,ind_B, probabilidad):
         self.ind_A = ind_A

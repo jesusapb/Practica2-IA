@@ -1,4 +1,8 @@
 import random
+
+'''
+Borrar esta clase
+'''
 # En esta clase se intercabian las colas apartir de un punto aleatorio, primero se considera si se intercambian
 # o no, siguiendo la probabilidad de intercambio
 

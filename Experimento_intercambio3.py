@@ -1,7 +1,9 @@
 from intercambiar3 import *
 from CrearPoblacion import *
 
-
+'''
+Clase exitosa pero innesaria, debera ser borrada
+'''
 
 poblacion_inicial= CrearPoblacion(8,6)
 poblacion_inicial.CrearNuevaPoblacion()

@@ -7,7 +7,7 @@ from CrearPoblacion import *
 from Analisis import *
 from GraficarRespuestas import *
 
-
+'''clase exitosa pero debe ser  borrada'''
 ##se define el numero de reinas
 ##el numero de casillas y con ello la logitud de los bits de los individuos
 

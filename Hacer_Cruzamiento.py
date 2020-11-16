@@ -1,4 +1,11 @@
-from intercambiar3 import *
+from Cruzamiento import *
+
+'''
+Esta clase se encarga de hacer los cruzamientos de una poblacion
+tomando de dos en dos los elementos de una poblacion y haciendo el intercambio de colas
+se le debe pasar en el constructor a la poblacion a cruzar y la probabilidad de que hagan este cruzamiento
+
+'''
 
 class Hacer_cruzamiento:
 
@@ -17,16 +24,8 @@ class Hacer_cruzamiento:
 
             A = self.poblacion[i]
             B = self.poblacion[i+1]
-
-            cambio = intercambiar3(A,B, self.probabilidad)
+            cambio = Cruzamiento(A,B, self.probabilidad)
             cambio.procesoCruzamiento()
             self.nuevaPoblacion.append(cambio.hijoA)
             self.nuevaPoblacion.append(cambio.hijoB)
             i= i + 2
-
-
-#A = [[3,7,8,4,6,5,2,1],[2,4,3,1,5,6,7,8],[7,3,2,5,4,6,8,1],[3,7,8,5,2,1,6,4],[7,5,1,8,6,4,2,3],[3,8,4,5,1,6,2,7],[4,2,5,7,1,3,6,8],[7,4,8,3,5,6,1,2]]
-
-#cruzamiento = Hacer_cruzamiento(A,80)
-#cruzamiento.cruzarPoblacion()
-#print(cruzamiento.nuevaPoblacion)

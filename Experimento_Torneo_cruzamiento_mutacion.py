@@ -6,6 +6,10 @@ from Seleccion_Torneo import *
 from Hacer_Cruzamiento import *
 from Hacer_Mutacion import *
 
+'''
+Clase exitosa pero innesaria, debera ser borrada
+'''
+
 poblacion_inicial= CrearPoblacion(8,50)
 poblacion_inicial.CrearNuevaPoblacion()
 print(poblacion_inicial.poblacion)

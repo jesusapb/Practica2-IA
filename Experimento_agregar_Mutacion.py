@@ -7,6 +7,10 @@ from CrearPoblacion import *
 from Analisis import *
 #from GraficarRespuestas import *
 
+'''
+Clase exitosa pero innesaria, debera ser borrada
+'''
+
 
 poblacion_inicial= CrearPoblacion(8,100)
 poblacion_inicial.CrearNuevaPoblacion()

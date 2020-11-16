@@ -9,6 +9,10 @@ from Analisis import *
 from Seleccion_Torneo import *
 from Hacer_Cruzamiento import *
 
+'''
+Clase exitosa pero innesaria, debera ser borrada
+'''
+
 
 poblacion_inicial= CrearPoblacion(8,50)
 poblacion_inicial.CrearNuevaPoblacion()

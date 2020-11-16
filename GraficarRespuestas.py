@@ -1,4 +1,7 @@
-
+'''
+Esta clase se usa para graficar la primera respuesta de las  solucuciones con el proposito
+de ver graficamente como seria la respuesta
+'''
 
 class GraficarRespuestas:
 
@@ -35,18 +38,10 @@ class GraficarRespuestas:
             print(i)
 
 
-
-
-
-
 #A = [1,2,3,4,5,6,7,8]
 #A1= [1,8,2,7,3,6,4,5]
 #A2= [5,2,4,7,3,8,6,1]
 #A3= [1,5,8,6,3,7,2,4]
-
-
-
-
 
 #imprimir=GraficarRespuestas(A3)
 #imprimir.construirLinea(8)

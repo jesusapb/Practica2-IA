@@ -1,6 +1,10 @@
 import random
 import copy
 
+''' 
+clase fallida borrarla
+'''
+
 class Mutacion2:
 
     def __init__(self, porcentaje, ind_ori):

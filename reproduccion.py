@@ -4,6 +4,11 @@
 
 import random
 
+'''
+Clase fallida borrarla
+'''
+
+
 class reproduccion:
 
     def __init__(self,poblacion,tamaPoblacion=0):

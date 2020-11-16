@@ -2,6 +2,8 @@ import random
 
 ## Esta clase se usa para mutar a los invividuos bit por bit
 
+'''clase fallida borrarla'''
+
 class mutacion:
 
     def __init__(self, porcentaje, ind_ori):

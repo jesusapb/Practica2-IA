@@ -1,18 +1,18 @@
 import copy
 from CrearPoblacion import *
 from Analisis import *
-from Mutacion2 import *
 from Seleccion_Torneo import *
 from Hacer_Mutacion import *
 from  Hacer_Cruzamiento import *
+from GraficarRespuestas import *
 
 class Ocho_Reinas:
 
-    def __init__(self, NR, Tama, Prob_Mutacion, Prob_Intercambio, Num_iteraciones):
+    def __init__(self, NR, Tama, Prob_Mutacion, Prob_Cruzamiento, Num_iteraciones):
         self.NR = NR
         self.Tama = Tama
         self.Prob_Mutacion = Prob_Mutacion
-        self.Prob_Intercambio = Prob_Intercambio
+        self.Prob_Cruzamiento = Prob_Cruzamiento
         self.Num_iteraciones = Num_iteraciones
         self.PoblacionInicial = []
         self.PoblacionNueva = []
@@ -48,20 +48,19 @@ class Ocho_Reinas:
 
             #cruzamiento
 
-            cruzamiento = Hacer_cruzamiento(poblacionTorneo, 80)
+            cruzamiento = Hacer_cruzamiento(poblacionTorneo,self.Prob_Cruzamiento)
             cruzamiento.cruzarPoblacion()
             poblacionIntercambio = cruzamiento.nuevaPoblacion
 
             #Mutacion
-            Mutar = Hacer_Mutacion(poblacionIntercambio, 40)
+            Mutar = Hacer_Mutacion(poblacionIntercambio, self.Prob_Mutacion)
             Mutar.MutarPoblacion()
             poblacionMutada = Mutar.nuevaPoblacion
 
             self.PoblacionNueva.clear()
             self.PoblacionNueva = copy.deepcopy(poblacionMutada)
-            #print(self.PoblacionNueva)
-
             j = j + 1
+            print(self.PoblacionNueva)
 
         #print(self.Respuestas)
 
@@ -69,12 +68,19 @@ class Ocho_Reinas:
 
     def imprimir_Solucion(self):
         print("respuestas: ", self.Respuestas)
+        print("Numero de Soluciones:", len(self.Respuestas))
 
 
+    def Graficar_Soluciones(self):
+        if len(self.Respuestas) >1:
+            imprimir=GraficarRespuestas(self.Respuestas[1])
+            #imprimir.construirLinea(8)
+            #imprimir.construir_impresion()
+            imprimir.imprimir()
 
 
-
-buscar = Ocho_Reinas(8,100,40,40,100)
-buscar.Generar_Poblacion()
-buscar.Buscar_Solucion()
-buscar.imprimir_Solucion()
+#buscar = Ocho_Reinas(8,100,80,40,100)
+#buscar.Generar_Poblacion()
+#buscar.Buscar_Solucion()
+#buscar.imprimir_Solucion()
+#buscar.Graficar_Soluciones()

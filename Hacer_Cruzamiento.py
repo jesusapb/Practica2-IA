@@ -1,7 +1,5 @@
 from intercambiar3 import *
 
-
-
 class Hacer_cruzamiento:
 
     def __init__(self, poblacion, probabilidad):

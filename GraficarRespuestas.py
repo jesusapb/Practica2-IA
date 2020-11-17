@@ -4,14 +4,14 @@ de ver graficamente como seria la respuesta
 '''
 
 class GraficarRespuestas:
-
+    #se pasa al contructor al individuo que sera imprimido
     def __init__(self,individuo):
         self.individuo=individuo
         self.tama=len(self.individuo)
         self.listaImprimible=[]
 
+    #se contruye cada linea con la repesentacion de la ubicacion de la reina
     def construirLinea(self,N):
-
         Zeros=[0]*self.tama
         j=1
         for i in Zeros:
@@ -23,27 +23,15 @@ class GraficarRespuestas:
 
         return Zeros
 
+    #se costruye la lista con la ubicacion de cada individuo
     def construir_impresion(self):
         self.listaImprimible=[]
         for i in self.individuo:
             self.listaImprimible.append(self.construirLinea(i))
 
-
-
-
+    #se imprime el tablero con las reinas
     def imprimir(self):
         self.construir_impresion()
-
         for i in self.listaImprimible:
             print(i)
 
-
-#A = [1,2,3,4,5,6,7,8]
-#A1= [1,8,2,7,3,6,4,5]
-#A2= [5,2,4,7,3,8,6,1]
-#A3= [1,5,8,6,3,7,2,4]
-
-#imprimir=GraficarRespuestas(A3)
-#imprimir.construirLinea(8)
-#imprimir.construir_impresion()
-#imprimir.imprimir()

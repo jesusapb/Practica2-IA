@@ -6,9 +6,15 @@ from Hacer_Mutacion import *
 from  Hacer_Cruzamiento import *
 from GraficarRespuestas import *
 
-class Ocho_Reinas:
+'''
+Aqui se desarrolla el algoritmo de programacion genetica
+'''
 
-    def __init__(self, NR, Tama, Prob_Mutacion, Prob_Cruzamiento, Num_iteraciones):
+
+class Ocho_Reinas:
+    #se pasa al constructor el numero de reinas, el tamaño de la poblacion,
+    # el numero de iteraciones, la probabilidad de mutacion y la probabilidad de cruzamiento
+    def __init__(self, NR, Tama,Num_iteraciones, Prob_Mutacion, Prob_Cruzamiento):
         self.NR = NR
         self.Tama = Tama
         self.Prob_Mutacion = Prob_Mutacion
@@ -18,14 +24,16 @@ class Ocho_Reinas:
         self.PoblacionNueva = []
         self.Respuestas = []
 
+    # se genera la poblacion inicial y se crea la nueva poblacion
     def Generar_Poblacion(self):
         poblacion = CrearPoblacion(self.NR,self.Tama)
         poblacion.CrearNuevaPoblacion()
         self.PoblacionInicial = poblacion.poblacion
-        print(self.PoblacionInicial)
+        print("Poblacion Inicial: ",self.PoblacionInicial)
         self.PoblacionNueva = copy.copy(self.PoblacionInicial)
 
-
+    #se busca la solucion evaluando la poblacion, haciedo el torneo, cruzamiento
+    # y mutacion de la poblacion, esto se repite por el numero de iteraciones indicada
     def Buscar_Solucion(self):
 
         j =0
@@ -40,7 +48,7 @@ class Ocho_Reinas:
 
             #Torneo
             torneo = seleccion_torneo(self.PoblacionNueva, Fitnest)
-            torneo.torneo3()
+            torneo.torneo4()
             torneo.mezclar_poblacion()
             poblacionTorneo = torneo.NuevaPoblacion
             Fitnest.clear()
@@ -58,23 +66,19 @@ class Ocho_Reinas:
             self.PoblacionNueva.clear()
             self.PoblacionNueva = copy.deepcopy(poblacionMutada)
             j = j + 1
-            print(self.PoblacionNueva)
+            #print(self.PoblacionNueva)
 
 
-
+    #se imprime las respuestas y el numero de respuestas
     def imprimir_Solucion(self):
+        print("poblacion final:", self.PoblacionNueva)
         print("respuestas: ", self.Respuestas)
         print("Numero de Soluciones:", len(self.Respuestas))
 
 
+
+    # se grafica la primera solucion como ejemplo de como leer las respuestas
     def Graficar_Soluciones(self):
         if len(self.Respuestas) >1:
             imprimir=GraficarRespuestas(self.Respuestas[0])
             imprimir.imprimir()
-
-
-#buscar = Ocho_Reinas(8,100,80,40,100)
-#buscar.Generar_Poblacion()
-#buscar.Buscar_Solucion()
-#buscar.imprimir_Solucion()
-#buscar.Graficar_Soluciones()

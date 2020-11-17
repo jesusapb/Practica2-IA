@@ -1,13 +1,16 @@
 import random
 
 ''' 
-En esta clase se hace el proceso de seleccion de los mejores individuos que seran reproducidos
+En esta clase se hace el proceso de seleccion de los mejores individuos que seran reproducidos, 
+    Se pasa al constructor 5 parametros, el numero de reinas, el tamaño de la de poblacion,
+    el numero de iteraciones, la probablidad de mutacion y la ´probabilidad de cruzamiento
+    nota: este metodo tiene 3 formas de torneo, la que se usa es la llamada torneo4
+
 '''
 
 class seleccion_torneo:
-
+    # al constructor se le pasa la poblacion y los valoresFitnest de esta poblacion
     def __init__(self,poblacion,valoresFitnes):
-        print("seleccion por torneo")
         self.poblacion = poblacion
         self.valoresFitnes = valoresFitnes
         self.tama=len(self.poblacion)
@@ -27,22 +30,8 @@ class seleccion_torneo:
             else:
                 self.NuevaPoblacion.append(self.poblacion[num_Ale1])
 
-#metodo posiblemente dañado, revisarlo a la brevedad
-    def torneo2(self):
-        for i in range(0,self.tama):
-            print("Fitnes: ",self.valoresFitnes[i])
-            print("El individuo de la poblacion: ",self.poblacion[i])
-            num_Ale1= random.randint(0,self.tama)
-            num_Ale2 = random.randint(0, self.tama)
-            print("numero aleatorio 1:", num_Ale1)
-            print("numero aleatorio 2:", num_Ale2)
-            if self.valoresFitnes[i] < self.valoresFitnes[num_Ale1]:
-                self.NuevaPoblacion.append(self.poblacion[i])
-            else:
-                self.NuevaPoblacion.append(self.poblacion[num_Ale1])
 
-
-
+    # se hace el torneo comparando 3 individuos continuos, se selecciona la mejor, el cual pasa a la nueva poblacion
     def torneo3(self):
         i=0
         while i< self.tama:
@@ -52,6 +41,8 @@ class seleccion_torneo:
                 self.NuevaPoblacion.append(self.poblacion[(i + 1)% self.tama])
             i = i +1
 
+
+    #se hace el torneo comparando 3 individuos continuos, se selecciona la mejor, el cual pasa a la nueva poblacion
     def torneo4(self):
         i=0
         while i< self.tama:
@@ -66,34 +57,8 @@ class seleccion_torneo:
 
             i = i + 1
 
-
+    #se mezcla a la poblacion, para los siguientes pasos
     def mezclar_poblacion(self):
         mezcla = random.sample(self.NuevaPoblacion, self.tama)
         self.NuevaPoblacion = mezcla
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

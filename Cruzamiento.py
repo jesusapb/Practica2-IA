@@ -1,12 +1,10 @@
 import random
+
 ''' En esta clase se intercabian las colas apartir de un punto aleatorio, se usa la cola
 del otro padre para completar al hijo y el resto con numeros aletorios evitando repeticion'''
-
-
-##se cambiara el nombre a cruzar
-
 class Cruzamiento:
 
+    # se pasa al constructor el individuo A, el individuo B y la probabilidad de cruzamiento
     def __init__(self,ind_A,ind_B, probabilidad):
         self.ind_A = ind_A
         self.ind_B = ind_B
@@ -15,11 +13,10 @@ class Cruzamiento:
         self.mutoAPartirD = 0
         self.probabilidad = probabilidad
 
-
+    #se genera el numero aleatorio apartir del cual se parte para hacer el cruzamiento
     def numero_aleatorio(self):
         tama = len(self.ind_A)
         return random.randint(0, tama)
-    #        return random.randint(1,tama-1)
 
 
     def prob_Cruzamiento(self):
@@ -32,7 +29,8 @@ class Cruzamiento:
             return False
 
 
-
+    # se constuyen los hijos tomando bases de sus padres, ser intenrcambian
+    # y se eliminan los elementos repetidos
     def Construir_Hijos(self):
         subA=[]
         subB=[]
@@ -40,20 +38,12 @@ class Cruzamiento:
         self.mutoAPartirD = ApartirD
         i = 0
         for A, B in zip(self.ind_A, self.ind_B):
-            #print(A)
-            #print(B)
-            #print("el nivel de bits recorridos es:", i)
-            # print(i)
             i = i + 1
-            if i > ApartirD :
-                #print("se edita")
-                #print("el numero aleatorio es:", ApartirD)
-                #se debe verificar que no se repita
+            if i > ApartirD:
                 self.hijoA.append(B)
                 self.hijoB.append(A)
 
             else:
-                #print("no se edita")
                 self.hijoA.append(A)
                 self.hijoB.append(B)
 

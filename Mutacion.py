@@ -1,12 +1,12 @@
 import random
 import copy
 
-''' 
-clase fallida borrarla
 '''
-
-class Mutacion2:
-
+En esta clase se hace la mutacion de cada inviduo, la cual consiste en el intercambio de dos posicones al azar.
+La clase recibe el porcentaje de probabilidad de mutacion y el individuo que sera mutado
+'''
+class Mutacion:
+    # se pasa en el constructor el porcentaje de mutacion y el individuo a mutar
     def __init__(self, porcentaje, ind_ori):
         self.porcentaje = porcentaje
         self.ind_ori = ind_ori
@@ -22,7 +22,7 @@ class Mutacion2:
         else:
             return False
 
-
+    # se muta al individuo, intercambiando dos posicones al azar
     def mutar(self):
         ind1 =random.randint(0,7)
         ind2 = random.randint(0,7)
@@ -33,9 +33,9 @@ class Mutacion2:
         bitB = self.ind_nuevo[ind2]
         self.ind_nuevo[ind1] = bitB
         self.ind_nuevo[ind2] = bitA
-#        print(self.ind_ori)
         return self.ind_nuevo
 
+    # se muta o no al individuo y si es el caso
     def mutar_individuo(self):
         self.ind_nuevo=[]
         mutar=self.muta_o_no()
@@ -48,9 +48,3 @@ class Mutacion2:
             return self.ind_ori
 
 
-
-
-#A=[1,2,3,4,5,6,7,8]
-#muta= Mutacion2(80,A)
-#muta.mutar_individuo()
-#print(muta.mutar_individuo())
